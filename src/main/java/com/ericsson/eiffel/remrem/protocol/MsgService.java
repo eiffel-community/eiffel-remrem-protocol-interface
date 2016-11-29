@@ -15,26 +15,26 @@ public interface MsgService {
     String generateMsg(String msgType, JsonObject jsonMessage);
 
     /**
-     * Returns the Event Id from the json object.
+     * Returns the Event Id from json formatted eiffel message. 
      * 
-     * @param JsonObject bodyJson
-     * @return the eventId from json object if event id not available then returns the null value
+     * @param JsonObject eiffelMessage
+     * @return the eventId from eiffelMessage if event id not available then returns the null value
      */
-    String getEventId(JsonObject bodyJson);
+    String getEventId(JsonObject eiffelMessage);
 
     /**
-     * Returns Family.
-     * 
-     * @return Family from the messaging library.
+     * Returns Family Routing Key Word from the messaging library based on the eiffel message eventType.
+     * @param JsonObject eiffelMessage
+     * @return family routing key word in String format.
      */
-    String getFamily();
+    String getFamily(JsonObject eiffelMessage);
 
     /**
-     * Returns event type.
-     * 
-     * @return event type from the messaging library.
+     * Returns Type Routing Key Word from the messaging library based on the eiffel message eventType.
+     * @param JsonObject eiffelMessage
+     * @return type routing key word in String format.
      */
-    String getType();
+    String getType(JsonObject eiffelMessage);
     
     /**
      * Returns service name.
