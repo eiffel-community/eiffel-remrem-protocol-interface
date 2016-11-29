@@ -12,4 +12,12 @@ public class ValidationResult {
         this.valid = valid;
         this.validationMesage = validationMesage;
     }
+    public boolean isValid() {
+        return valid;
+    }
+    public String getValidationMesage() {
+        return validationMesage;
+    }
+    
+    
 }
