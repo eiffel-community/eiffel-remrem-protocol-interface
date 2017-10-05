@@ -65,4 +65,13 @@ public interface MsgService {
      * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false and validation message property's.
      */
     ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage);
+
+    /**
+     * Returns Routing key from the messaging library based on the eiffel message eventType.
+     * @param tag
+     * @param domainId
+     * @param subDomainId
+     * @return Routing key in String format.
+     */
+    String getRoutingKey(String tag, String domainId, String subDomainId);
 }
