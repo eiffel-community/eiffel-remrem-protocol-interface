@@ -67,11 +67,18 @@ public interface MsgService {
     ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage);
 
     /**
+     * Returns the domain Id from json formatted eiffel message.
+     * @param JsonObject eiffelMessage
+     * @return the domainId from eiffelMessage if domainId not available then returns the null value
+     */
+    String getDomainId(JsonObject eiffelMessage);
+
+    /**
      * Returns Routing key from the messaging library based on the eiffel message eventType.
      * @param tag
      * @param domainId
-     * @param subDomainId
+     * @param userDomainSuffix
      * @return Routing key in String format.
      */
-    String getRoutingKey(String tag, String domainId, String subDomainId);
+    String getRoutingKey(String tag, String domainId, String userDomainSuffix);
 }
