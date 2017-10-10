@@ -68,7 +68,7 @@ public interface MsgService {
 
     /**
      * Returns the domain Id from json formatted eiffel message.
-     * @param JsonObject eiffelMessage
+     * @param eiffelMessage eiffel message in json format
      * @return the domainId from eiffelMessage if domainId not available then returns the null value
      */
     String getDomainId(JsonObject eiffelMessage);
@@ -81,8 +81,7 @@ public interface MsgService {
      * &lt;family&gt; and &lt;type&gt; are provided by the protocol library.<br>
      * &lt;tag&gt; which needs to be put in the Routing key<br>
      * &lt;domain&gt; is configured and can be suffixed by a user domain.<br>
-     * Routing key can also be replaced by the user provided routing key.
-     * @param JsonObject eiffelMessage
+     * @param eiffelMessage eiffel message in json format
      * @param tag
      * @param domain from which the message is sent
      * @param userDomainSuffix
