@@ -1,3 +1,6 @@
+## 0.0.4
+- Added method to get event type.
+
 ## 0.0.3
 - Added method to get Routing key.
 

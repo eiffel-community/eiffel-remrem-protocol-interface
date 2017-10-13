@@ -37,6 +37,13 @@ public interface MsgService {
     String getEventId(JsonObject eiffelMessage);
 
     /**
+     * Returns the Event type from json formatted eiffel message.
+     * @param eiffelMessage eiffel message in json format
+     * @return the eventType from eiffelMessage if event type is not available then returns the null value
+     */
+    String getEventType(JsonObject eiffelMessage);
+
+    /**
      * Returns Family Routing Key Word from the messaging library based on the eiffel message eventType.
      * @param JsonObject eiffelMessage
      * @return family routing key word in String format.
@@ -87,5 +94,5 @@ public interface MsgService {
      * @param userDomainSuffix
      * @return Routing key in String format.
      */
-    String getRoutingKey(JsonObject eiffelMessage, String tag, String domain, String userDomainSuffix);
+    String generateRoutingKey(JsonObject eiffelMessage, String tag, String domain, String userDomainSuffix);
 }
