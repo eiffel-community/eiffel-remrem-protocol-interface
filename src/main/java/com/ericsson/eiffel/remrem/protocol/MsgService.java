@@ -44,20 +44,6 @@ public interface MsgService {
     String getEventType(JsonObject eiffelMessage);
 
     /**
-     * Returns Family Routing Key Word from the messaging library based on the eiffel message eventType.
-     * @param JsonObject eiffelMessage
-     * @return family routing key word in String format.
-     */
-    String getFamily(JsonObject eiffelMessage);
-
-    /**
-     * Returns Type Routing Key Word from the messaging library based on the eiffel message eventType.
-     * @param JsonObject eiffelMessage
-     * @return type routing key word in String format.
-     */
-    String getType(JsonObject eiffelMessage);
-    
-    /**
      * Returns service name.
      * 
      * @return service name from the messaging library.
@@ -72,13 +58,6 @@ public interface MsgService {
      * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false and validation message property's.
      */
     ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage);
-
-    /**
-     * Returns the domain Id from json formatted eiffel message.
-     * @param eiffelMessage eiffel message in json format
-     * @return the domainId from eiffelMessage if domainId not available then returns the null value
-     */
-    String getDomainId(JsonObject eiffelMessage);
 
     /**
      * Returns Routing key from the messaging library based on the eiffel message eventType.<br>

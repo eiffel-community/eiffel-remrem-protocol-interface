@@ -1,3 +1,6 @@
+## 0.0.5
+- Removed methods to get event family, type and domainId.
+
 ## 0.0.4
 - Added method to get event type.
 
