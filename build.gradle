@@ -34,7 +34,7 @@ apply plugin: 'eclipse'
 
 jar {
     baseName = 'remrem-protocol'
-    version =  '0.0.5'
+    version =  '0.0.6'
 }
 
 group 'com.ericsson.eiffel.remrem'
