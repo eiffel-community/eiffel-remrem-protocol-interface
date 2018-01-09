@@ -14,6 +14,8 @@
 */
 package com.ericsson.eiffel.remrem.protocol;
 
+import java.util.Collection;
+
 import com.google.gson.JsonObject;
 
 public interface MsgService {
@@ -42,6 +44,12 @@ public interface MsgService {
      * @return the eventType from eiffelMessage if event type is not available then returns the null value
      */
     String getEventType(JsonObject eiffelMessage);
+    
+    /** Returns a collection of event types supported by this protocol.
+     *  Use iterator to iterate throught the collection.
+     * @return collection of supported event types
+     */
+    Collection<String> getSupportedEventTypes();
 
     /**
      * Returns service name.
