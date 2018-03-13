@@ -1,4 +1,4 @@
-# eiffel-remrem-protocol-interface
+# Eiffel REMReM Protocol Interface
 
 [![Build Status](https://travis-ci.org/Ericsson/eiffel-remrem-protocol-interface.svg?branch=master)](https://travis-ci.org/Ericsson/protocol-interface)
 [![Coverage Status](https://coveralls.io/repos/github/Ericsson/eiffel-remrem-protocol-interface/badge.svg?branch=master)](https://coveralls.io/github/Ericsson/eiffel-remrem-protocol-interface?branch=master)
