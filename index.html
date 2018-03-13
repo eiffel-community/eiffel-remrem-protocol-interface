@@ -26,10 +26,6 @@
 <!-- MAIN CONTENT -->
 <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner">
-        <h2>
-            <a id="eiffel-remrem-protocol-interface" class="anchor" href="#eiffel-remrem-protocol-interface" aria-hidden="true"><span
-                    aria-hidden="true" class="octicon octicon-link"></span></a>Eiffel Remrem Protocol Interface
-        </h2>
         <h2>Introduction</h2>
         <p>Eiffel Remrem Protocol Interface project contains java interfaces that are implemented by Eiffel protocol</p>
         <p>Implementing an interface allows a class to become more formal about the behavior it promises to provide. Interfaces form a contract
@@ -44,12 +40,45 @@
         <h2>Compatibility</h2>
         <p>All message services need to implement interface provided by this project to communicate properly.</p>
         <h2>Usage</h2>
-        <p>To create new version of interface you need to modify the interface, change the java api docs for methods to represent new version of
-            interface and build the jar using gladle. Then changes need to be done in
-            <a href="https://github.com/Ericsson/eiffel-remrem-semantics">eiffel-remrem-semantics</a>,
-            <a href="https://github.com/Ericsson/eiffel-remrem-generate">eiffel-remrem-generate</a>,
-            <a href="https://github.com/Ericsson/eiffel-remrem-publish">eiffel-remrem-publish</a>
-        </p>
+        <p>An interface in the Java programming language is an abstract type that is used to specify a behavior that classes must implement.
+            All methods of an Interface do not contain implementation (method bodies). Interfaces cannot be instantiated, but rather are implemented.
+            A class that implements an interface must implement all of the non-default methods described in the interface, or be an abstract
+            class. </p>
+        <p>The body of the interface contains abstract methods, but since all methods in an interface are, by definition,
+            abstract, the abstract keyword is not required. Since the interface specifies a set of exposed behaviors, all methods are implicitly
+            public.
+            If your class claims to implement an interface, all methods defined by that interface must appear in its source code before the class will
+            successfully compile.</p>
+        <p>Interfaces are defined by the following syntax.<br>
+            public interface MsgService {<br>
+            /**<br>
+            * Generate takes a partial message in JSON format,<br>
+            * validates it and adds mandatory fields before outputting a complete, valid Eiffel message.<br>
+            *<br>
+            * @param String msgType<br>
+            * @param JsonObject jsonMessage<br>
+            * @return the generated and validate Eiffel messages as json String<br>
+            */<br>
+            String generateMsg(String msgType, JsonObject jsonMessage);<br>
+            }</p>
+        <p>In this example inteface MsgService has only one method generateMsg that consumes String and JsonObject and returns String.
+            If a class implements an interface and does not implement all its methods, it must be marked as abstract.
+            If a class is abstract, one of its subclasses is expected to implement its unimplemented methods. Although if any of the abstract class'
+            subclasses does not implement all interface methods, the subclass itself must be marked again as abstract.</p>
+        <p>Classes may implement interfaces. For example,<br>
+            public class SemanticsService implements MsgService {<br>
+            @Override<br>
+            public String generateMsg(String msgType, JsonObject bodyJson) {<br>
+            return String result = gson.toJson(jsonMessage);<br>
+            }<br>
+            }<br></p>
+        <p>To create new version of protocol one will need to modify the interface, change the java api docs for methods to represent new version of
+            interface and build the jar using gladle. Include builded jar as external library in other projects and in these project implement
+            the desired interface.</p>
+        <p>Currently interface implementation is in
+            <a href="https://github.com/Ericsson/eiffel-remrem-semantics">eiffel-remrem-semantics</a></p>
+        <p>The current version of Eiffel Protocol 2.0 is
+            <a href="https://github.com/Ericsson/eiffel/releases">Toulouse</a></p>
     </section>
 </div>
 <!-- FOOTER  -->
