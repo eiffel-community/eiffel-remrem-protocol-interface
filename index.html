@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Eiffel Remrem Protocol Interface : ">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <title>Eiffel REMReM Protocol Interface</title>
+    <title>Eiffel Remrem Protocol Interface</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
@@ -13,7 +13,7 @@
 <div id="header_wrap" class="outer">
     <header class="inner">
         <a id="forkme_banner" href="https://github.com/Ericsson/eiffel-remrem-protocol-interface">View on GitHub</a>
-        <h1 id="project_title">Eiffel REMReM Protocol Interface</h1>
+        <h1 id="project_title">Eiffel Remrem Protocol Interface</h1>
         <h2 id="project_tagline"></h2>
         <section id="downloads">
             <a class="zip_download_link" href="https://github.com/ericsson/eiffel-remrem-protocol-interface/zipball/master">Download this project as a
@@ -27,7 +27,7 @@
 <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner">
         <h2>Introduction</h2>
-        <p>Eiffel REMReM Protocol Interface project contains java interfaces that are implemented by Eiffel protocol</p>
+        <p>Eiffel Remrem Protocol Interface project contains java interfaces that are implemented by Eiffel protocol</p>
         <p>Implementing an interface allows a class to become more formal about the behavior it promises to provide. Interfaces form a contract
             between the class and the outside world, and this contract is enforced at build time by the java compiler.</p>
         <h2>Installation</h2>
@@ -49,32 +49,50 @@
             public.
             If your class claims to implement an interface, all methods defined by that interface must appear in its source code before the class will
             successfully compile.</p>
-        <p>Interfaces are defined by the following syntax.<br>
-            public interface MsgService {<br>
-            /**<br>
-            * Generate takes a partial message in JSON format,<br>
-            * validates it and adds mandatory fields before outputting a complete, valid Eiffel message.<br>
-            *<br>
-            * @param String msgType<br>
-            * @param JsonObject jsonMessage<br>
-            * @return the generated and validate Eiffel messages as json String<br>
-            */<br>
-            String generateMsg(String msgType, JsonObject jsonMessage);<br>
-            }</p>
+        <p>Interfaces are defined by the following syntax.</p>
+<div><pre>
+public interface MsgService {
+        /**
+        * Generate takes a partial message in JSON format,
+        * validates it and adds mandatory fields before outputting a complete, valid Eiffel message.
+        *
+        * @param String msgType
+        * @param JsonObject jsonMessage
+        * @return the generated and validate Eiffel messages as json String
+        */
+        String generateMsg(String msgType, JsonObject jsonMessage);
+}
+</pre></div>
+
         <p>In this example inteface MsgService has only one method generateMsg that consumes String and JsonObject and returns String.
             If a class implements an interface and does not implement all its methods, it must be marked as abstract.
             If a class is abstract, one of its subclasses is expected to implement its unimplemented methods. Although if any of the abstract class'
             subclasses does not implement all interface methods, the subclass itself must be marked again as abstract.</p>
-        <p>Classes may implement interfaces. For example,<br>
-            public class SemanticsService implements MsgService {<br>
-            @Override<br>
-            public String generateMsg(String msgType, JsonObject bodyJson) {<br>
-            return String result = gson.toJson(jsonMessage);<br>
-            }<br>
-            }<br></p>
+        <p>Classes may implement interfaces. For example</p>
+        <div><pre>
+public class SemanticsService implements MsgService {
+        @Override
+        public String generateMsg(String msgType, JsonObject bodyJson) {
+            return String result = gson.toJson(jsonMessage);
+        }
+}
+</pre></div>
         <p>To create new version of protocol one will need to modify the interface, change the java api docs for methods to represent new version of
             interface and build the jar using gladle. Include builded jar as external library in other projects and in these project implement
             the desired interface.</p>
+        <p>To import the project you need to add to pom.xml</p>
+        <div><pre>&lt;dependency&gt;
+   &lt;groupId&gt;com.ericsson.eiffel&lt;/groupId&gt;
+   &lt;artifactId&gt;eiffel-remrem-protocol-interface&lt;/artifactId&gt;
+   &lt;version&gt;0.0.7&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+        </div>
+        <p>Or import the project to build.gradle<br>
+        <div><pre>dependencies {
+   compile 'com.github.Ericsson:eiffel-remrem-protocol-interface:0.0.7'
+}
+</pre></div>
         <p>Currently interface implementation is in
             <a href="https://github.com/Ericsson/eiffel-remrem-semantics">eiffel-remrem-semantics</a></p>
         <p>The current version of Eiffel Protocol 2.0 is
@@ -87,7 +105,7 @@
         class="outer">
     <footer class="inner">
         <p class="copyright">
-            Eiffel REMReM Protocol Interface maintained by <a
+            Eiffel-remrem-protocol-interface maintained by <a
                 href="https://github.com/ericsson">Ericsson</a>
         </p>
         <p>
