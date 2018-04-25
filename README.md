@@ -1,5 +1,9 @@
 # Eiffel REMReM Protocol Interface
 
+The Eiffel Remrem Protocol Interface is the interface for the Eiffel Remrem Semantics (https://github.com/Ericsson/eiffel-remrem-semantics).
+
+It is provided with the purpose that anyone should be able to create their own Eiffel Semantics library to use for Remrem.
+
 [![Build Status](https://travis-ci.org/Ericsson/eiffel-remrem-protocol-interface.svg?branch=master)](https://travis-ci.org/Ericsson/protocol-interface)
 [![Coverage Status](https://coveralls.io/repos/github/Ericsson/eiffel-remrem-protocol-interface/badge.svg?branch=master)](https://coveralls.io/github/Ericsson/eiffel-remrem-protocol-interface?branch=master)
 [![](https://jitpack.io/v/Ericsson/eiffel-remrem-protocol-interface.svg)](https://jitpack.io/#Ericsson/eiffel-remrem-protocol-interface)
