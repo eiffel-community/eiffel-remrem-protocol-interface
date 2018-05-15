@@ -62,19 +62,27 @@
         <p>To create new version of protocol one will need to modify the interface, change the java api docs for methods to represent new version of
             interface and build the jar using gladle. Include builded jar as external library in other projects and in these project implement
             the desired interface.</p>
-        <p>To import the project you need to add to pom.xml</p>
-        <div><pre>&lt;dependency&gt;
-   &lt;groupId&gt;com.ericsson.eiffel&lt;/groupId&gt;
-   &lt;artifactId&gt;eiffel-remrem-protocol-interface&lt;/artifactId&gt;
-   &lt;version&gt;x.x.x&lt;/version&gt;
-&lt;/dependency&gt;
-</pre>
+        <p>To import the project user need to add to pom.xml</p>
+        <div><pre>&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;jitpack.io&lt;/id&gt;
+        &lt;url>https://jitpack.io&lt;/url&gt;
+    &lt;/repository>
+&lt;/repositories&gt;</pre>
+            <pre>&lt;dependency&gt;
+    &lt;groupId&gt;com.github.Ericsson&lt;/groupId&gt;
+    &lt;artifactId&gt;eiffel-remrem-protocol-interface&lt;/artifactId&gt;
+    &lt;version&gt;x.x.x&lt;/version&gt;
+&lt;/dependency&gt;</pre>
         </div>
         <p>Or import the project to build.gradle<br>
-        <div><pre>dependencies {
-   compile 'com.github.Ericsson:eiffel-remrem-protocol-interface:x.x.x'
-}
-</pre>
+        <div><pre>repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+}</pre>
+            <pre>dependencies {
+   compile("com.github.Ericsson:eiffel-remrem-protocol-interface:x.x.x")
+}</pre>
         </div>
         <p>Currently interface implementation is in
             <a href="https://github.com/Ericsson/eiffel-remrem-semantics">eiffel-remrem-semantics</a></p>
