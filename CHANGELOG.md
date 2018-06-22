@@ -1,3 +1,6 @@
+## 0.0.8
+- Migrated from gradle to maven 
+
 ## 0.0.7
 - Added method to get template for event types.
 
@@ -17,4 +20,4 @@
 - Added copyright headers to the source code.
 
 ## 0.0.1
-- Added  
+- Added
