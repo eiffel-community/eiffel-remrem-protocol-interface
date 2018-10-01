@@ -1,5 +1,22 @@
+/*
+    Copyright 2017 Ericsson AB.
+    For a full list of individual contributors, please see the commit history.
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 package com.ericsson.eiffel.remrem.protocol;
 
+import java.util.Collection;
+
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 public interface MsgService {
@@ -23,19 +40,25 @@ public interface MsgService {
     String getEventId(JsonObject eiffelMessage);
 
     /**
-     * Returns Family Routing Key Word from the messaging library based on the eiffel message eventType.
-     * @param JsonObject eiffelMessage
-     * @return family routing key word in String format.
+     * Returns the Event type from json formatted eiffel message.
+     * @param eiffelMessage eiffel message in json format
+     * @return the eventType from eiffelMessage if event type is not available then returns the null value
      */
-    String getFamily(JsonObject eiffelMessage);
-
-    /**
-     * Returns Type Routing Key Word from the messaging library based on the eiffel message eventType.
-     * @param JsonObject eiffelMessage
-     * @return type routing key word in String format.
-     */
-    String getType(JsonObject eiffelMessage);
+    String getEventType(JsonObject eiffelMessage);
     
+    /** 
+     * Returns a collection of event types supported by this protocol.
+     * Use iterator to iterate throught the collection.
+     * @return collection of supported event types
+     */
+    Collection<String> getSupportedEventTypes();
+    
+    /** 
+     * Returns a template for the specified event type.
+     * @return Json of template file
+     */
+    JsonElement getEventTemplate(String eventType);
+
     /**
      * Returns service name.
      * 
@@ -51,4 +74,20 @@ public interface MsgService {
      * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false and validation message property's.
      */
     ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage);
+
+    /**
+     * Returns Routing key from the messaging library based on the eiffel message eventType.<br>
+     * In general, Routing key of eiffel message is in the format<br>
+                 <b>&lt;protocol&gt;.&lt;family&gt;.&lt;type&gt;.&lt;tag&gt;.&lt;domain&gt;</b><br>
+     * &lt;protocol&gt; is used if provided by the protocol library used.<br>
+     * &lt;family&gt; and &lt;type&gt; are provided by the protocol library.<br>
+     * &lt;tag&gt; which needs to be put in the Routing key<br>
+     * &lt;domain&gt; is configured and can be suffixed by a user domain.<br>
+     * @param eiffelMessage eiffel message in json format
+     * @param tag
+     * @param domain from which the message is sent
+     * @param userDomainSuffix
+     * @return Routing key in String format.
+     */
+    String generateRoutingKey(JsonObject eiffelMessage, String tag, String domain, String userDomainSuffix);
 }
