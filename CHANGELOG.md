@@ -1,3 +1,6 @@
+## 0.0.11
+- Updated eiffel-remrem-parent version
+
 ## 0.0.10
 - Updated eiffel-remrem-parent version
 
