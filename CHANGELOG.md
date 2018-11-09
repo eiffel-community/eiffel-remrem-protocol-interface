@@ -1,3 +1,7 @@
+## 0.0.12
+- Updated eiffel-remrem-parent version from 0.0.5 to 0.0.6
+  Upgraded Jackson.databind.version from 2.9.4 to 2.9.5 in parent 0.0.6 version
+
 ## 0.0.11
 - Updated eiffel-remrem-parent version
 
