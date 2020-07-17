@@ -83,6 +83,7 @@ public interface MsgService {
      * Method validates the jsonObject based on the event message type. 
      * @param JsonObject bodyJson
      * @param jsonvalidateMessage
+     * @param lenientValidation
      * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false and validation message property's.
      */
     ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage, Boolean lenientValidation);
