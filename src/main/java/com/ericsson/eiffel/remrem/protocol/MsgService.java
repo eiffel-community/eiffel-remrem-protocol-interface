@@ -30,6 +30,18 @@ public interface MsgService {
      * @return the generated and validate Eiffel messages as json String
      */
     String generateMsg(String msgType, JsonObject jsonMessage);
+    
+    /**
+     * Generate takes a partial message in JSON format, 
+     * validates it and adds mandatory fields before outputting a complete, valid Eiffel message.
+     * lenientValidation will perform the only mandatory field validation and non-mandatory validation failures will place in Eiffel message as a new property(remremGenerateFailures)
+     * 
+     * @param msgType
+     * @param jsonMessage
+     * @param lenientValidation
+     * @return the generated and validate Eiffel messages as json String
+     */
+    String generateMsg(String msgType, JsonObject jsonMessage, Boolean lenientValidation);
 
     /**
      * Returns the Event Id from json formatted eiffel message. 
@@ -73,7 +85,7 @@ public interface MsgService {
      * @param jsonvalidateMessage
      * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false and validation message property's.
      */
-    ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage);
+    ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage, Boolean lenientValidation);
 
     /**
      * Returns Routing key from the messaging library based on the eiffel message eventType.<br>
