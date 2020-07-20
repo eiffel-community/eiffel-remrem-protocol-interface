@@ -30,7 +30,7 @@ public interface MsgService {
      * @return the generated and validate Eiffel messages as json String
      */
     String generateMsg(String msgType, JsonObject jsonMessage);
-    
+
     /**
      * Generate takes a partial message in JSON format, 
      * validates it and adds mandatory fields before outputting a complete, valid Eiffel message.
@@ -57,14 +57,14 @@ public interface MsgService {
      * @return the eventType from eiffelMessage if event type is not available then returns the null value
      */
     String getEventType(JsonObject eiffelMessage);
-    
+
     /** 
      * Returns a collection of event types supported by this protocol.
      * Use iterator to iterate throught the collection.
      * @return collection of supported event types
      */
     Collection<String> getSupportedEventTypes();
-    
+
     /** 
      * Returns a template for the specified event type.
      * @return Json of template file
@@ -78,7 +78,15 @@ public interface MsgService {
      */
     
     String getServiceName();
-    
+
+    /**
+     * Method validates the jsonObject based on the event message type. 
+     * @param JsonObject bodyJson
+     * @param jsonvalidateMessage
+     * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false and validation message property's.
+     */
+
+    ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage);
     /**
      * Method validates the jsonObject based on the event message type. 
      * @param JsonObject bodyJson
