@@ -1,5 +1,5 @@
 ## 2.0.5
-- REMReM Generate defination for supported Eiffel protocols updated for support Lenient Validation.
+- Updated REMReM Generate to support lenient validation for Eiffel Protocol.
 
 ## 2.0.4
 - Uplifted eiffel-remrem-parent version from 2.0.3 to 2.0.4 to resolve security vulnerability issue.
