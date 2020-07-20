@@ -1,4 +1,4 @@
-## 2.0.5
+## 2.1.0
 - Updated REMReM Generate to support lenient validation for Eiffel Protocol.
 
 ## 2.0.4
