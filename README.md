@@ -17,6 +17,8 @@
 
 <img src="./images/logo.png" alt="Eiffel RemRem" width="350"/>
 
+[![Sandbox badge](https://img.shields.io/badge/Stage-Sandbox-yellow)](https://github.com/eiffel-community/community/blob/master/PROJECT_LIFECYCLE.md#stage-sandbox)
+
 # Eiffel REMReM Protocol Interface
 
 [![Build Status](https://travis-ci.org/eiffel-community/eiffel-remrem-protocol-interface.svg?branch=master)](https://travis-ci.org/eiffel-community/protocol-interface)
