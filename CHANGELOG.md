@@ -1,3 +1,6 @@
+## 2.1.3
+- Added a new abstract method to support new routing key template of Sepia.
+
 ## 2.1.2
 - Added a new abstract method for /message_protocol endpoint.
 
