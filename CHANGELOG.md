@@ -1,3 +1,6 @@
+## 2.1.3
+- Uplifted eiffel-remrem-parent version from 2.0.5 to 2.0.8 to resolve security vulnerability issue.
+
 ## 2.1.2
 - Added a new abstract method for /message_protocol endpoint.
 
