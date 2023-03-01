@@ -1,4 +1,4 @@
-## 2.1.4
+## 2.2.0
 - Added a new abstract method to support new routing key template of Sepia.
 
 ## 2.1.3
