@@ -1,3 +1,6 @@
+## 2.2.0
+- Added a new abstract method to support new routing key template of Sepia.
+
 ## 2.1.3
 - Uplifted eiffel-remrem-parent version from 2.0.5 to 2.0.8 to resolve security vulnerability issue.
 
