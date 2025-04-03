@@ -21,7 +21,7 @@
 
 # Eiffel REMReM Protocol Interface
 
-[![Build Status](https://travis-ci.org/eiffel-community/eiffel-remrem-protocol-interface.svg?branch=master)](https://travis-ci.org/eiffel-community/protocol-interface)
+[![CI](https://github.com/eiffel-community/eiffel-remrem-protocol-interface/actions/workflows/main.yml/badge.svg)](https://github.com/eiffel-community/eiffel-remrem-protocol-interface/actions/workflows/main.yml)
 [![Coverage Status](https://coveralls.io/repos/github/eiffel-community/eiffel-remrem-protocol-interface/badge.svg?branch=master)](https://coveralls.io/github/eiffel-community/eiffel-remrem-protocol-interface?branch=master)
 [![](https://jitpack.io/v/eiffel-community/eiffel-remrem-protocol-interface.svg)](https://jitpack.io/#eiffel-community/eiffel-remrem-protocol-interface)
 
