@@ -1,3 +1,6 @@
+## 2.2.1
+- Added support to pass validation properties.
+
 ## 2.2.0
 - Added a new abstract method to support new routing key template of Sepia.
 

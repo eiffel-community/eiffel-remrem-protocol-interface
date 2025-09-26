@@ -15,11 +15,13 @@
 package com.ericsson.eiffel.remrem.protocol;
 
 import java.util.Collection;
+import java.util.HashMap;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 public interface MsgService {
+    String LENIENT_VALIDATION = "lenientValidation";
 
     /**
      * Generate takes a partial message in JSON format, 
@@ -38,10 +40,22 @@ public interface MsgService {
      * 
      * @param msgType
      * @param jsonMessage
-     * @param lenientValidation
+     * @param lenientValidation perform the only mandatory field validation and non-mandatory validation failures will
+     *                          place in Eiffel message as a new property(remremGenerateFailures)
      * @return the generated and validate Eiffel messages as json String
      */
     String generateMsg(String msgType, JsonObject jsonMessage, Boolean lenientValidation);
+
+    /**
+     * Generate takes a partial message in JSON format,
+     * validates it and adds mandatory fields before outputting a complete, valid Eiffel message.
+     *
+     * @param msgType
+     * @param jsonMessage
+     * @param validationProperties Available properties are implementation-specific.
+     * @return the generated and validate Eiffel messages as json String
+     */
+    String generateMsg(String msgType, JsonObject jsonMessage, HashMap<String, Object> validationProperties);
 
     /**
      * Returns the Event Id from json formatted eiffel message. 
@@ -94,16 +108,27 @@ public interface MsgService {
      * @param jsonvalidateMessage
      * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false and validation message property's.
      */
-
     ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage);
+
     /**
      * Method validates the jsonObject based on the event message type. 
      * @param JsonObject bodyJson
      * @param jsonvalidateMessage
      * @param lenientValidation
-     * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false and validation message property's.
+     * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false
+     * and validation message property's.
      */
     ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage, Boolean lenientValidation);
+
+    /**
+     * Method validates the jsonObject based on the event message type.
+     * @param JsonObject bodyJson
+     * @param jsonvalidateMessage
+     * @param validationProperties Available properties are implementation-specific.
+     * @return ValidationResult with true if validation is success, if validation fails ValidationResult has false
+     * and validation message property's.
+     */
+    ValidationResult validateMsg(String msgType, JsonObject jsonvalidateMessage, HashMap<String, Object> validationProperties);
 
     /**
      * Returns Routing key from the messaging library based on the eiffel message eventType.<br>
